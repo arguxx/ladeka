@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('loading.loading');
+});
+Route::get('/input-paket', function () {
+    return view('input-paket.input-paket');
+});
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard');
+});
+Route::get('/', function () {
+    return view('');
 });
