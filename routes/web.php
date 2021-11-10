@@ -22,6 +22,9 @@ Route::get('/input-paket', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.dashboard');
 });
-Route::get('/', function () {
-    return view('');
+Route::get('/login', function () {
+    return view('login.login');
+});
+Route::get('/list-member', function () {
+    return view('list-member.list-member');
 });
