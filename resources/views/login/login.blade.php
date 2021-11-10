@@ -8,8 +8,7 @@ box-sizing: border-box;
 box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
 border-radius: 29px; height:554px;">
     <div class="card-body mt-5">
-<h1>Ladeka</h1>
-<h5 class="mb-5"><i>Car Care</i></h5>
+      <img src="logo/logo.png" class="mb-5 mt-3" style="width: 150px" alt="">
 
 <form class="my-auto">
   <div class="mb-3">
