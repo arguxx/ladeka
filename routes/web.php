@@ -28,3 +28,9 @@ Route::get('/login', function () {
 Route::get('/list-member', function () {
     return view('list-member.list-member');
 });
+Route::get('/detail-member', function () {
+    return view('detail-member.detail-member');
+});
+Route::get('/input-transaksi', function () {
+    return view('input-transaksi.input-transaksi');
+});

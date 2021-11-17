@@ -5,7 +5,7 @@
 box-sizing: border-box;
 box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
 border-radius: 29px; height:554px;">
-    <div class="card-body">
+    <div class="card-body card-body mx-5 mt-4">
 <form class="my-auto">
   <div class="mb-3">
     <label for="#" class="form-label"><strong>NAMA PAKET</strong></label>
