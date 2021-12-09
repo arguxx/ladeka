@@ -1,16 +1,15 @@
 @extends('layout.main')
 
 @section('container')
-
-<table class="table mt-5 table-bordered border-dark text-center table-responsive-sm">
+<h2 class="mt-5 mb-3">List Member</h2>
+<table class="table table-bordered border-dark text-center table-responsive-sm w-100">
     <thead>
       <tr style="background-color:#9B51E0; color:white;">
         <th scope="col">Id Member</th>
         <th scope="col">Nama Lengkap</th>
+        <th scope="col">Tanggal Lahir</th>
         <th scope="col">No. Telepon</th>
-        <th scope="col">Jenis Kelamin</th>
         <th scope="col">E-Mail</th>
-        <th scope="col">Status</th>
         <th scope="col">Aksi</th>
       </tr>
     </thead>
@@ -18,57 +17,43 @@
       <tr>
         <th>696969</th>
         <td>Argian Radity</td>
+        <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>Laki-Laki</td>
         <td>simontok@gmail.com</td>
-        <td>mhs</td>
-        <td><img src="img/view.png" alt="" class="mx-3" style="width:23px; "><img src="img/bin.png" alt="" class="mx-3" style="width:23px; "></td>
+        <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
       <tr>
         <th>696969</th>
         <td>Argian Radity</td>
+        <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>Laki-Laki</td>
         <td>simontok@gmail.com</td>
-        <td>mhs</td>
-        <td><img src="img/view.png" alt="" class="mx-3" style="width:23px; "><img src="img/bin.png" alt="" class="mx-3" style="width:23px; "></td>
+        <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
       <tr>
         <th>696969</th>
         <td>Argian Radity</td>
+        <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>Laki-Laki</td>
         <td>simontok@gmail.com</td>
-        <td>mhs</td>
-        <td><img src="img/view.png" alt="" class="mx-3" style="width:23px; "><img src="img/bin.png" alt="" class="mx-3" style="width:23px; "></td>
+        <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
       <tr>
         <th>696969</th>
         <td>Argian Radity</td>
+        <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>Laki-Laki</td>
         <td>simontok@gmail.com</td>
-        <td>mhs</td>
-        <td><img src="img/view.png" alt="" class="mx-3" style="width:23px; "><img src="img/bin.png" alt="" class="mx-3" style="width:23px; "></td>
+        <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
       <tr>
         <th>696969</th>
         <td>Argian Radity</td>
+        <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>Laki-Laki</td>
         <td>simontok@gmail.com</td>
-        <td>mhs</td>
-        <td><img src="img/view.png" alt="" class="mx-3" style="width:23px; "><img src="img/bin.png" alt="" class="mx-3" style="width:23px; "></td>
-      </tr>
-      <tr>
-        <th>696969</th>
-        <td>Argian Radity</td>
-        <td>089897123</td>
-        <td>Laki-Laki</td>
-        <td>simontok@gmail.com</td>
-        <td>mhs</td>
-        <td><img src="img/view.png" alt="" class="mx-3" style="width:23px; "><img src="img/bin.png" alt="" class="mx-3" style="width:23px; "></td>
+        <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
     </tbody>
-  </table>
+</table>
 @endsection
