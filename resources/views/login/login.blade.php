@@ -12,26 +12,26 @@
     </head>
     <body>
         <div class="container">
-          <div class="card text-center mx-auto mt-5" style="width: 392px; border: 3px solid #333333;
+          <div class="card text-center mx-auto mt-5" style="width: 425px; border: 2.5px solid #333333;
           box-sizing: border-box;
           box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
           border-radius: 29px; height:554px;">
-              <div class="card-body mt-5">
-                <img src="logo/logo.png" class="mb-5 mt-3" style="width: 150px" alt="">
+            <div class="card-body mt-4 mx-3">
+              <img src="logo/logo.png" class="mb-5 mt-3" style="width: 150px" alt="">
           
-          <form class="my-auto">
-            <div class="mb-3">
-              <input type="text" class="form-control" id="# " placeholder="Masukan E-Mail">
+              <form class="my-auto">
+                <div class="mb-3">
+                  <input type="text" style="padding: 15px 20px; border-radius: 8px; box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);" class="form-control border-dark" id="# " placeholder="Masukkan E-mail">
+                </div>
+                <div class="mb-4">
+                  <input type="password" style="padding: 15px 20px; border-radius: 8px; box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);" class="form-control border-dark" id="#" placeholder="Masukkan Password">
+                </div>
+                <a href="#" style="color: black"><i>Forgot Password</i></a>
+                <br>
+                <button type="submit" class="btn mt-4" style="background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">Login</button>
+              </form>
             </div>
-            <div class="mb-3">
-              <input type="password" class="form-control" id="#" placeholder="Masukan Password">
-            </div>
-          <a href="#" style="color: black"><i>Forgot Password</i></a>
-            <button type="submit" class="btn mt-3" style="width:257px;background: linear-gradient(90deg, #AF5AF2 20.35%, rgba(162, 72, 233, 0) 108.56%);
-            border-radius: 15px;">Submit</button>
-          </form>
-              </div>
-            </div>
+          </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
