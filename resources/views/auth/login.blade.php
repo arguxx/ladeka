@@ -21,10 +21,8 @@
                 <img src="logo/logo.png" class="mb-5 mt-3" style="width: 150px" alt="">
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" style="color: red" :status="session('status')" />
-
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" style="color: red" :errors="$errors" />
-
                 <form class ="my-auto" method="POST" action="{{ route('login') }}">
                     @csrf
                 <div class="mb-3">
@@ -54,9 +52,9 @@
                 @endif
                 <br>
                 <button type="submit" class="btn mt-4" style="background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">Login</button>
-              </form>
+                </form>
             </div>
-          </div>
+            </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
