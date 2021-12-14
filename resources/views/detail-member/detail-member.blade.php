@@ -1,52 +1,59 @@
-@extends('layout.main')
+@extends('layouts.app')
 
 @section('container')
-<p class="mx-5">dam tolong ganti font nya ya, lu lebih tau tentang perfontan duniawi (:</p>
-<h2 class="mx-5"><strong>Detail Member</strong></h2>
-<div class="container">
-    <div class="card mx-4 mt-3" style="width: 397px;
-    height: 249px; border: 3px solid #333333;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
-    border-radius: 29px;">
-        <div class="card-body mx-3 mt-3" style="font-size: 20px">
-            <p>Nama Lengkap: Ardian Adam</p>
-            <p>Jenis Kelamin: Laki - laki</p>
-            <p>No Telepon: 081956789423</p>
-            <p>Email: Ardian@gmail.com</p>
-        </div>
-    </div>
-    <button type="submit" class="btn mx-4 mt-4" style="color:white; width:210px; height: 50px; background: #9B51E0; border-radius:9px;"
-    border-radius: 15px;">+ Tambah Transaksi</button>
-    <table class="table mt-4 mx-4 table-bordered border-dark text-center table-responsive-sm">
-        <thead>
-          <tr style="background-color:#9B51E0; color:white;">
-            <th scope="col">Nor</th>
-            <th scope="col">Paket</th>
-            <th scope="col">Merk Mobil</th>
-            <th scope="col">Tipe Mobil</th>
-            <th scope="col">Harga</th>
-            <th scope="col">Aksi</th>
-          </tr>
-        </thead>
-        <tbody style="background-color:white;">
-          <tr>
-            <th>696969</th>
-            <td>Argian Radity</td>
-            <td>089897123</td>
-            <td>089897123</td>
-            <td>089897123</td>
-            <td><img src="img/bin.png" alt="" class="mx-3" style="width:23px; "></td>
-          </tr>
-          <tr>
-            <th>696969</th>
-            <td>Argian Radity</td>
-            <td>089897123</td>
-            <td>089897123</td>
-            <td>089897123</td>
-            <td><img src="img/bin.png" alt="" class="mx-3" style="width:23px; "></td>
-          </tr>
-        </tbody>
-      </table>
+<h2 class="mt-5 mb-3">Detail Member</h2>
+<div class="card mt-5 mb-4 p-4 pt-3" style="width: 500px; border: 2.5px solid #333333;
+box-sizing: border-box;
+box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
+border-radius: 29px;">
+    <table>
+        <tr>
+            <td class="p-2">Nama Lengkap</td>
+            <td class="p-2">: Argian Radity</td>
+        </tr>
+        <tr>
+            <td class="p-2">Tanggal Lahir</td>
+            <td class="p-2">: DD MM YYYY</td>
+        </tr>
+        <tr>
+            <td class="p-2">No. Telepon</td>
+            <td class="p-2">: 089897123</td>
+        </tr>
+        <tr>
+            <td class="p-2">E-mail</td>
+            <td class="p-2">: simontok@gmail.com</td>
+        </tr>
+    </table>
 </div>
+<a href="/input-transaksi" class="btn mx-auto mb-4" style="background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">Tambah Transaksi</a>
+<table class="table table-bordered border-dark text-center table-responsive-sm w-100">
+    <thead>
+      <tr style="background-color:#9B51E0; color:white;">
+        <th scope="col">No.</th>
+        <th scope="col">Paket</th>
+        <th scope="col">Merk Mobil</th>
+        <th scope="col">Tipe Mobil</th>
+        <th scope="col">Harga</th>
+        <th scope="col">Aksi</th>
+      </tr>
+    </thead>
+    <tbody style="background-color:white;">
+      <tr>
+        <td>1</td>
+        <td>Paket 1</td>
+        <td>Merk Mobil</td>
+        <td>Tipe Mobil</td>
+        <td>IDR xxxxxxx</td>
+        <td><a href=""><i class="fas fa-trash-alt" style="color: purple;"></i></a></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Paket 1</td>
+        <td>Merk Mobil</td>
+        <td>Tipe Mobil</td>
+        <td>IDR xxxxxxx</td>
+        <td><a href=""><i class="fas fa-trash-alt" style="color: purple;"></i></a></td>
+      </tr>
+    </tbody>
+</table>
 @endsection

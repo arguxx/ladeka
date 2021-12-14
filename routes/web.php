@@ -14,16 +14,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('loading.loading');
+    return view('auth.login');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard.dash');
+})->middleware(['auth'])->name('dashboard');
+
 Route::get('/input-paket', function () {
     return view('input-paket.input-paket');
 });
-Route::get('/dashboard', function () {
-    return view('dashboard.dashboard');
+Route::get('/input-transaksi', function () {
+    return view('input-transaksi.input-transaksi');
 });
 Route::get('/login', function () {
     return view('login.login');
+});
+Route::get('/tambah-member', function () {
+    return view('tambah-member.tambah-member');
 });
 Route::get('/list-member', function () {
     return view('list-member.list-member');
@@ -31,6 +39,7 @@ Route::get('/list-member', function () {
 Route::get('/detail-member', function () {
     return view('detail-member.detail-member');
 });
-Route::get('/input-transaksi', function () {
-    return view('input-transaksi.input-transaksi');
+Route::get('/paket', function () {
+    return view('paket.paket');
 });
+require __DIR__.'/auth.php';
