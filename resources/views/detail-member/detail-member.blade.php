@@ -21,7 +21,7 @@ border-radius: 29px;">
         </tr>
         <tr>
             <td class="p-2">E-mail</td>
-            <td class="p-2">: simontok@gmail.com</td>
+            <td class="p-2">: hehe@gmail.com</td>
         </tr>
     </table>
 </div>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\MemberModel;
 use Illuminate\Http\Request;
 
+
+
 class MemberController extends Controller
 {
     /**
@@ -14,7 +16,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
+        $memberModel = MemberModel::all();
+        return view('member.index', ['member' => $memberModel]);
     }
 
     /**
@@ -24,7 +27,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        //
+        return view('member.add');
     }
 
     /**
@@ -35,7 +38,20 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+                //validasi input data employee
+                $request->validate([
+                    'namaLengkap' => ['required', 'string'],
+                    'tanggalLahir' => ['required', 'string'],
+                    'noTelp' => ['required', 'integer'],
+                    'email' =>['required', 'integer'],
+                ]);
+
+                //insert setiap request dari form ke dalam database
+                //Jika menggunakan metode ini, nama field pada tabel dan form harus sama
+                MemberModel::create($request->all());
+                // Alert::success('Success', 'Berhasil menambahkan data Barang!');
+                /// redirect jika sukses menyimpan data
+                return redirect()->route('member.index');
     }
 
     /**
@@ -57,7 +73,7 @@ class MemberController extends Controller
      */
     public function edit(MemberModel $memberModel)
     {
-        //
+        return view('member.edit',compact('member'));
     }
 
     /**
@@ -69,7 +85,20 @@ class MemberController extends Controller
      */
     public function update(Request $request, MemberModel $memberModel)
     {
-        //
+        $request->validate([
+            'namaLengkap' => ['required', 'string'],
+            'tanggalLahir' => ['required', 'string'],
+            'noTelp' => ['required', 'integer'],
+            'email' =>['required', 'integer'],
+        ]);
+
+        //insert setiap request dari form ke dalam database
+        //Jika menggunakan metode ini, nama field pada tabel dan form harus sama
+        $memberModel->update($request->all());
+        // Alert::success('Success', 'Berhasil mengedit data Barang!');
+
+        /// setelah berhasil mengubah data
+        return redirect()->route('member.index');
     }
 
     /**
@@ -80,6 +109,9 @@ class MemberController extends Controller
      */
     public function destroy(MemberModel $memberModel)
     {
-        //
+        $memberModel->delete();
+        // Alert::success('Success', 'Berhasil menghapus data Barang!');
+
+        return redirect()->route('member.index');
     }
 }

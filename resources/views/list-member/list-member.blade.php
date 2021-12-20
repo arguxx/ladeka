@@ -18,7 +18,7 @@
         <td>Argian Radity</td>
         <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>simontok@gmail.com</td>
+        <td>hehe@gmail.com</td>
         <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
       <tr>
@@ -26,7 +26,7 @@
         <td>Argian Radity</td>
         <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>simontok@gmail.com</td>
+        <td>hehe@gmail.com</td>
         <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
       <tr>
@@ -34,7 +34,7 @@
         <td>Argian Radity</td>
         <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>simontok@gmail.com</td>
+        <td>hehe@gmail.com</td>
         <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
       <tr>
@@ -42,7 +42,7 @@
         <td>Argian Radity</td>
         <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>simontok@gmail.com</td>
+        <td>hehe@gmail.com</td>
         <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
       <tr>
@@ -50,7 +50,7 @@
         <td>Argian Radity</td>
         <td>DD MM YYYY</td>
         <td>089897123</td>
-        <td>simontok@gmail.com</td>
+        <td>hehe@gmail.com</td>
         <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
     </tbody>
