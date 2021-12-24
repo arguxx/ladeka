@@ -16,8 +16,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $memberModel = MemberModel::all();
-        return view('member.index', ['member' => $memberModel]);
+        $member = MemberModel::all();
+        return view('member.list-member', ['member' => $member]);
     }
 
     /**
@@ -27,7 +27,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        return view('member.add');
+        return view('member.tambah-member');
     }
 
     /**
@@ -43,7 +43,7 @@ class MemberController extends Controller
                     'namaLengkap' => ['required', 'string'],
                     'tanggalLahir' => ['required', 'string'],
                     'noTelp' => ['required', 'integer'],
-                    'email' =>['required', 'integer'],
+                    'email' =>['required', 'string'],
                 ]);
 
                 //insert setiap request dari form ke dalam database
@@ -51,7 +51,7 @@ class MemberController extends Controller
                 MemberModel::create($request->all());
                 // Alert::success('Success', 'Berhasil menambahkan data Barang!');
                 /// redirect jika sukses menyimpan data
-                return redirect()->route('member.index');
+                return redirect()->route('dashboard');
     }
 
     /**
@@ -60,9 +60,9 @@ class MemberController extends Controller
      * @param  \App\Models\MemberModel  $memberModel
      * @return \Illuminate\Http\Response
      */
-    public function show(MemberModel $memberModel)
+    public function show(MemberModel $member)
     {
-        //
+        // return view('barang.show',compact('barang'));
     }
 
     /**
@@ -71,9 +71,9 @@ class MemberController extends Controller
      * @param  \App\Models\MemberModel  $memberModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(MemberModel $memberModel)
+    public function edit(MemberModel $member)
     {
-        return view('member.edit',compact('member'));
+        // return view('member.edit',compact('member'));
     }
 
     /**
@@ -83,22 +83,22 @@ class MemberController extends Controller
      * @param  \App\Models\MemberModel  $memberModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MemberModel $memberModel)
+    public function update(Request $request, MemberModel $member)
     {
-        $request->validate([
-            'namaLengkap' => ['required', 'string'],
-            'tanggalLahir' => ['required', 'string'],
-            'noTelp' => ['required', 'integer'],
-            'email' =>['required', 'integer'],
-        ]);
+        // $request->validate([
+        //     'namaLengkap' => ['required', 'string'],
+        //     'tanggalLahir' => ['required', 'string'],
+        //     'noTelp' => ['required', 'integer'],
+        //     'email' =>['required', 'integer'],
+        // ]);
 
-        //insert setiap request dari form ke dalam database
-        //Jika menggunakan metode ini, nama field pada tabel dan form harus sama
-        $memberModel->update($request->all());
-        // Alert::success('Success', 'Berhasil mengedit data Barang!');
+        // //insert setiap request dari form ke dalam database
+        // //Jika menggunakan metode ini, nama field pada tabel dan form harus sama
+        // $memberModel->update($request->all());
+        // // Alert::success('Success', 'Berhasil mengedit data Barang!');
 
-        /// setelah berhasil mengubah data
-        return redirect()->route('member.index');
+        // /// setelah berhasil mengubah data
+        // return redirect()->route('member.index');
     }
 
     /**
@@ -109,9 +109,9 @@ class MemberController extends Controller
      */
     public function destroy(MemberModel $memberModel)
     {
-        $memberModel->delete();
-        // Alert::success('Success', 'Berhasil menghapus data Barang!');
+        // $memberModel->delete();
+        // // Alert::success('Success', 'Berhasil menghapus data Barang!');
 
-        return redirect()->route('member.index');
+        // return redirect()->route('member.index');
     }
 }

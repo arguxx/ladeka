@@ -11,40 +11,40 @@
         </title>
     </head>
     <body>
-
+        @if (Route::has('login'))
+            @auth
+                <script>
+                setInterval(redirect, 10);
+                function redirect() {window.location.href = '/dashboard';}
+            </script>
+        @else
         <div class="container">
-            <div class="card text-center mx-auto mt-5" style="width: 425px; border: 2.5px solid #333333;
-            box-sizing: border-box;
-            box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
-            border-radius: 29px; height:554px;">
-            
-            <div class="card-body mt-4 mx-3">
-                <img src="logo/logo.png" class="mb-5 mt-3" style="width: 150px" alt="">
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" style="color: red" :status="session('status')" />
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" style="color: red" :errors="$errors" />
-                <form class ="my-auto" method="POST" action="{{ route('login') }}">
-                    @csrf
-                <div class="mb-3">
-                    <input type="text" 
-                    style="padding: 15px 20px; border-radius: 8px; box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);" 
-                    class="form-control border-dark" 
-                    id="#"
-                    type="email"
-                    name="email" :value="old('email')" required autofocus
-                    placeholder="Masukan Email">
-                </div>
-                <div class="mb-4">
-                    <input type="password"
-                    style="padding: 15px 20px; border-radius: 8px; box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);"
-                    class="form-control border-dark"
-                    id="password" 
-                    placeholder="Masukkan Password"
-                    type="password"
-                    name="password"
-                    required autocomplete="current-password">
-                </div>
+            <div class="card text-center mx-auto mt-5" style="width: 425px; border: 2.5px solid #333333;box-sizing: border-box;box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);border-radius: 29px; height:554px;">
+                <div class="card-body mt-4 mx-3">
+                    <img src="logo/logo.png" class="mb-5 mt-3" style="width: 150px" alt="">
+                    <x-auth-session-status class="mb-4" style="color: red" :status="session('status')" />
+                    <x-auth-validation-errors class="mb-4" style="color: red" :errors="$errors" />
+                    <form class ="my-auto" method="POST" action="{{ route('login') }}">
+                        @csrf
+                        <div class="mb-3">
+                            <input type="text" 
+                            style="padding: 15px 20px; border-radius: 8px; box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);" 
+                            class="form-control border-dark" 
+                            id="#"
+                            type="email"
+                            name="email" :value="old('email')" required autofocus
+                            placeholder="Masukan Email">
+                        </div>
+                        <div class="mb-4">
+                            <input type="password"
+                            style="padding: 15px 20px; border-radius: 8px; box-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.2);"
+                            class="form-control border-dark"
+                            id="password" 
+                            placeholder="Masukkan Password"
+                            type="password"
+                            name="password"
+                            required autocomplete="current-password">
+                        </div>
                 {{-- <a href="#" style="color: black"><i>Forgot Password</i></a> --}}
                 @if (Route::has('password.request'))
                     <a class="underline italic" style="color: black" href="{{ route('password.request') }}">
@@ -58,5 +58,8 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        @endauth
+    </div>
+@endif
     </body>
 </html>
