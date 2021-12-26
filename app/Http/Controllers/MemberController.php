@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\MemberModel;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
-
+use Member;
 
 class MemberController extends Controller
 {
@@ -38,7 +39,7 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-        //validasi input data employee
+
                 $request->validate([
                     'namaLengkap' => ['required', 'string'],
                     'tanggalLahir' => ['required', 'string'],
@@ -53,12 +54,9 @@ class MemberController extends Controller
                     'email' => $request->input('email'),
                 ];
 
-                //insert setiap request dari form ke dalam database
-                //Jika menggunakan metode ini, nama field pada tabel dan form harus sama
                 MemberModel::create($input);
-                // MemberModel::create($input);
                 // Alert::success('Success', 'Berhasil menambahkan data Barang!');
-                /// redirect jika sukses menyimpan data
+
                 return redirect()->route('dashboard');
     }
 
@@ -100,12 +98,10 @@ class MemberController extends Controller
         //     'email' =>['required', 'integer'],
         // ]);
 
-        // //insert setiap request dari form ke dalam database
-        // //Jika menggunakan metode ini, nama field pada tabel dan form harus sama
         // $memberModel->update($request->all());
         // // Alert::success('Success', 'Berhasil mengedit data Barang!');
 
-        // /// setelah berhasil mengubah data
+
         // return redirect()->route('member.index');
     }
 
@@ -115,13 +111,15 @@ class MemberController extends Controller
      * @param  \App\Models\MemberModel  $memberModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MemberModel $memberModel)
+    public function destroy(MemberModel $member)
     {
-        // $memberModel->delete();
-        // // Alert::success('Success', 'Berhasil menghapus data Barang!');
+        $member->delete();
 
-        // return redirect()->route('member.index');
+        // Alert::success('Success', 'Berhasil menghapus data Barang!');
+
+        return redirect()->route('dashboard');
     }
+    
     public function generateUniqueCode()
     {
         do {
