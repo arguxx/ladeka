@@ -15,6 +15,7 @@ class Member extends Migration
     {
         Schema::create('member', function (Blueprint $table) {
             $table->id();
+            $table->integer('kodeUnik');
             $table->string('namaLengkap');
             $table->string('tanggalLahir');
             $table->string('noTelp');

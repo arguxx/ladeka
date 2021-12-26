@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::get('/detail-member', function () {
+    return view('member.detail-member');
+});
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
 Route::resource('member', MemberController::class);
 
@@ -24,23 +30,6 @@ Route::get('/dashboard', function () {
     return view('dashboard.dash');
 })->middleware(['auth'])->name('dashboard');
 
-// Route::get('/input-paket', function () {
-//     return view('input-paket.input-paket');
-// });
-// Route::get('/input-transaksi', function () {
-//     return view('input-transaksi.input-transaksi');
-// });
-// Route::get('/login', function () {
-//     return view('login.login');
-// });
-// Route::get('/tambah-member', function () {
-//     return view('tambah-member.tambah-member');
-// });
 
-// Route::get('/detail-member', function () {
-//     return view('detail-member.detail-member');
-// });
-// Route::get('/paket', function () {
-//     return view('paket.paket');
-// });
+
 require __DIR__.'/auth.php';

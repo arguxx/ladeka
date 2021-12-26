@@ -11,6 +11,5 @@
             </form>
         </div>
         <div class="p-2"><a href="{{ route('dashboard') }}" style="color: black"> Dashboard </a></div>
-
     </div>
 </nav>

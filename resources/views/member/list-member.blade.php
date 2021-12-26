@@ -16,12 +16,12 @@
     <tbody style="background-color:white;">
       @foreach($member as $member)       
       <tr>
-        <th>{{$member->id}}</th>
+        <th>{{$member->kodeUnik}}</th>
         <td>{{$member->namaLengkap}}</td>
         <td>{{$member->tanggalLahir}}</td>
         <td>{{$member->noTelp}}</td>
-        <td>{{$member->email}}/td>
-        <td><a href="/detail-member"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
+        <td>{{$member->email}}</td>
+        <td><a href="{{ route('member.show' , $member->id) }}"><i class="fas fa-eye mx-3" style="color: purple;"></i></a><a href=""><i class="fas fa-trash-alt mx-3" style="color: purple;"></i></a></td>
       </tr>
       @endforeach
     </tbody>

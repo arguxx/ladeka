@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('container')
-<h2 class="mt-5 mb-3">Detail Member</h2>
 <div class="card mt-5 mb-4 p-4 pt-3" style="width: 500px; border: 2.5px solid #333333;
 box-sizing: border-box;
 box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
@@ -9,19 +8,19 @@ border-radius: 29px;">
     <table>
         <tr>
             <td class="p-2">Nama Lengkap</td>
-            <td class="p-2">: Argian Radity</td>
+            <td class="p-2">: {{$member->namaLengkap}}</td>
         </tr>
         <tr>
             <td class="p-2">Tanggal Lahir</td>
-            <td class="p-2">: DD MM YYYY</td>
+            <td class="p-2">: {{$member->tanggalLahir}}</td>
         </tr>
         <tr>
             <td class="p-2">No. Telepon</td>
-            <td class="p-2">: 089897123</td>
+            <td class="p-2">: {{$member->noTelp}}</td>
         </tr>
         <tr>
             <td class="p-2">E-mail</td>
-            <td class="p-2">: hehe@gmail.com</td>
+            <td class="p-2">: {{$member->email}}</td>
         </tr>
     </table>
 </div>

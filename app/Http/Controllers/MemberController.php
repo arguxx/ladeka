@@ -38,17 +38,25 @@ class MemberController extends Controller
      */
     public function store(Request $request)
     {
-                //validasi input data employee
+        //validasi input data employee
                 $request->validate([
                     'namaLengkap' => ['required', 'string'],
                     'tanggalLahir' => ['required', 'string'],
                     'noTelp' => ['required', 'integer'],
-                    'email' =>['required', 'string'],
+                    'email' =>  ['required', 'string'],
                 ]);
+                $input = [
+                    'kodeUnik' => $this->generateUniqueCode(),
+                    'namaLengkap' => $request->input('namaLengkap'),
+                    'tanggalLahir' => $request->input('tanggalLahir'),
+                    'noTelp' => $request->input('noTelp'),
+                    'email' => $request->input('email'),
+                ];
 
                 //insert setiap request dari form ke dalam database
                 //Jika menggunakan metode ini, nama field pada tabel dan form harus sama
-                MemberModel::create($request->all());
+                MemberModel::create($input);
+                // MemberModel::create($input);
                 // Alert::success('Success', 'Berhasil menambahkan data Barang!');
                 /// redirect jika sukses menyimpan data
                 return redirect()->route('dashboard');
@@ -62,7 +70,7 @@ class MemberController extends Controller
      */
     public function show(MemberModel $member)
     {
-        // return view('barang.show',compact('barang'));
+        return view('member.detail-member',compact('member'));
     }
 
     /**
@@ -113,5 +121,12 @@ class MemberController extends Controller
         // // Alert::success('Success', 'Berhasil menghapus data Barang!');
 
         // return redirect()->route('member.index');
+    }
+    public function generateUniqueCode()
+    {
+        do {
+            $code = random_int(100000, 999999);
+        } while (MemberModel::where("kodeUnik", "=", $code)->first());
+        return $code;
     }
 }
