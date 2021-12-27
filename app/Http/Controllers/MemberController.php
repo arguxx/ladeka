@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MemberModel;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
-
-use Member;
+use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
@@ -17,8 +16,11 @@ class MemberController extends Controller
      */
     public function index()
     {
-        $member = MemberModel::all();
+        // $member = MemberModel::all();
+        $member = DB::table('member')->paginate(8);
+        // $member = MemberModel::all();
         return view('member.list-member', ['member' => $member]);
+
     }
 
     /**
@@ -55,8 +57,7 @@ class MemberController extends Controller
                 ];
 
                 MemberModel::create($input);
-                // Alert::success('Success', 'Berhasil menambahkan data Barang!');
-
+                Alert::success('Success', 'Berhasil menambahkan data Barang!');
                 return redirect()->route('dashboard');
     }
 
@@ -99,7 +100,7 @@ class MemberController extends Controller
         // ]);
 
         // $memberModel->update($request->all());
-        // // Alert::success('Success', 'Berhasil mengedit data Barang!');
+        Alert::success('Success', 'Berhasil mengedit data Barang!');
 
 
         // return redirect()->route('member.index');
@@ -115,7 +116,7 @@ class MemberController extends Controller
     {
         $member->delete();
 
-        // Alert::success('Success', 'Berhasil menghapus data Barang!');
+        Alert::success('Success', 'Berhasil menghapus data Member!');
 
         return redirect()->route('dashboard');
     }

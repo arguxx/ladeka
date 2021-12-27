@@ -1,7 +1,3 @@
-@if (Route::has('login'))
-@auth
-
-
 @extends('layouts.app')
 
 @section('container')
@@ -60,10 +56,3 @@ border-radius: 29px;">
     </tbody>
 </table>
 @endsection
-@endauth
-@else
-<script>
-  setInterval(redirect, 10);
-  function redirect() {window.location.href = '/dashboard';}
-</script>
-@endif

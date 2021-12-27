@@ -15,16 +15,17 @@
       </tr>
     </thead>
     <tbody style="background-color:white;">
-      @foreach($member as $member)       
+      @foreach($member as $members)       
+      {{-- <livewire:member-single :member="$member" :key="$member->id"/> --}}
       <tr>
-        <th>{{$member->kodeUnik}}</th>
-        <td>{{$member->namaLengkap}}</td>
-        <td>{{$member->tanggalLahir}}</td>
-        <td>{{$member->noTelp}}</td>
-        <td>{{$member->email}}</td>
+        <th>{{$members->kodeUnik}}</th>
+        <td>{{$members->namaLengkap}}</td>
+        <td>{{$members->tanggalLahir}}</td>
+        <td>{{$members->noTelp}}</td>
+        <td>{{$members->email}}</td>
         <td>
-            <a href="{{ route('member.show' , $member->id) }}"><i class="fas fa-eye mx-3" style="color: purple;"></i></a>
-            <form style="display:inline;" method="POST" action="{{ url('member', $member->id ) }}">
+            <a href="{{ route('member.show' , $members->id) }}"><i class="fas fa-eye mx-3" style="color: purple;"></i></a>
+            <form style="display:inline;" method="POST" action="{{ url('member', $members->id ) }}">
               @csrf
               @method('DELETE')
               <button onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt mx-3" style="color: purple;"></i><button>
@@ -33,6 +34,9 @@
       </tr>
       @endforeach
     </tbody>
-</table>
+  </table>
+  <div class="div">
+    {{ $member->links() }}
+  </div>
 @endsection
 
