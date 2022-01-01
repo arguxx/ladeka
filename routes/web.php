@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\NyariController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +25,8 @@ Route::get('/welcome', function () {
 });
 
 Route::resource('member', MemberController::class);
+Route::resource('nyari', NyariController::class);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard.dash');

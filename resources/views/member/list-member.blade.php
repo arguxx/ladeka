@@ -3,6 +3,15 @@
 @section('container')
 <br>
 <br>
+
+
+<form class="my-auto" action="{{ route('nyari.index') }}" method="POST">
+  @csrf
+  <input type="text" name="cari" placeholder="Find Member" value="{{ old('cari') }}">
+<button type="submit">find</button>
+  </form>
+
+
 <table class="table table-bordered border-dark text-center table-responsive-sm w-100">
     <thead>
       <tr style="background-color:#9B51E0; color:white;">
@@ -38,5 +47,7 @@
   <div class="div">
     {{ $member->links() }}
   </div>
+
+
 @endsection
 

@@ -21,6 +21,7 @@ class MemberController extends Controller
         // $member = MemberModel::all();
         return view('member.list-member', ['member' => $member]);
 
+
     }
 
     /**
@@ -127,5 +128,35 @@ class MemberController extends Controller
             $code = random_int(100000, 999999);
         } while (MemberModel::where("kodeUnik", "=", $code)->first());
         return $code;
+    }
+    // public function nyari(Request $request)
+	// {
+
+	// 	$cari = $request->cari;
+
+	// 	$member = DB::table('member')
+	// 	->where('namaLengkap','like',"%".$cari."%")
+	// 	->paginate();
+
+	// 	return view('member.list-member',['member' => $member]);
+
+	// }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\MemberModel  $memberModel
+     * @return \Illuminate\Http\Response
+     */
+    public function nyari(){
+        // $cari = $request->cari;
+        // $users = DB::select('select * from student_details');
+        // return view('stud_view',['users'=>$users]);
+        // $member = DB::table('member')->paginate(8);
+        // return view('member.list-member',['member' => $member]);
+        $member = DB::table('member')->paginate(8);
+        // $member = MemberModel::all();
+        return view('member.list-member', ['member' => $member]);
+
     }
 }
