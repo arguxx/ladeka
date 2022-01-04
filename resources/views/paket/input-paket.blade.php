@@ -19,10 +19,12 @@ border-radius: 29px; height:554px;">
   @endif
 
   <div class="card-body">
-    <form class="my-auto ">
-      <div class="mb-3">
+    <form class="my-auto" action="{{ route('pakett.store') }}" method="POST">
+      @csrf
+      {{-- <div class="mb-3">
         <label for="#" class="form-label fs-5"><strong>NAMA PAKET</strong></label>
         <input type="text" class="form w-100 p-0 pb-1 mb-3" id="#" style="border: 0; border-bottom: 1px solid black;" placeholder="Masukkan Nama Paket">
+      
       </div>
       <div class="mb-3">
         <label for="#" class="form-label fs-5"><strong>HARGA</strong></label>
@@ -31,7 +33,20 @@ border-radius: 29px; height:554px;">
       <div class="mb-3">
         <label for="#" class="form-label fs-5"><strong>DESKRIPSI</strong></label>
         <input type="text" class="form w-100 p-0 pb-1 mb-3" id="#" style="border: 0; border-bottom: 1px solid black;" placeholder="Masukkan Deskripsi">
-      </div>
+      </div> --}}
+
+      <div class="mb-3">
+        <label class="form-label fs-5" for="namaPaket" ><strong>NAMA PAKET</strong></label>
+          <input id="namaPaket" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaPaket" :value="old('namaPaket')" placeholder="Masukkan Nama Paket" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label fs-5" for="harga" ><strong>HARGA</strong></label>
+          <input id="harga" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="harga" :value="old('harga')" placeholder="Masukkan Harga Paket" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label fs-5" for="deskripsi" ><strong>DESKRIPSI</strong></label>
+          <input id="deskripsi" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="textarea" name="deskripsi" :value="old('deskripsi')" placeholder="Masukkan Deskripsi" required />
+        </div>
 
       <button type="submit" class="btn mt-5 mx-auto" style="display: block; background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">Tambah</button>
     </form>

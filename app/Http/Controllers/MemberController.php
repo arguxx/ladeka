@@ -59,7 +59,7 @@ class MemberController extends Controller
 
                 MemberModel::create($input);
                 Alert::success('Success', 'Berhasil menambahkan data Barang!');
-                return redirect()->route('dashboard');
+                return redirect()->route('member.index');
     }
 
     /**
