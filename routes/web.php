@@ -3,6 +3,7 @@
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\NyariController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,10 @@ Route::get('/welcome', function () {
 Route::resource('member', MemberController::class);
 Route::resource('pakett', PaketController::class);
 Route::resource('nyari', NyariController::class);
+Route::resource('transaksi', TransaksiController::class);
+
+// Route::get('/user', [UserController::class, 'index']);
+
 
 
 Route::get('/dashboard', function () {

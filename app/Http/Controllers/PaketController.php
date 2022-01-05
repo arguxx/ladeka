@@ -15,7 +15,7 @@ class PaketController extends Controller
     public function index()
     {
         $pakett = PaketModel::all();
-        return view('paket.paket', ['member' => $pakett]);
+        return view('paket.paket', ['paket' => $pakett]);
     }
 
     /**
@@ -40,7 +40,20 @@ class PaketController extends Controller
             'namaPaket' => ['required', 'string'],
             'harga' => ['required', 'integer'],
             'deskripsi' => ['required', 'string'],
+            'deskripsi1' => [],
+            'deskripsi2' => [],
         ]);
+
+        // $input = [
+        //     // 'kodeUnik' => $this->generateUniqueCode(),
+        //     'namaPaket' => $request->input('namaPaket'),
+        //     'harga' => $request->input('harga'),
+        //     'deskripsi' => $request->input('deskripsi'),
+        //     'deskripsi1' => $request,
+        //     'deskripsi2' => $request,
+        // ];
+
+        // PaketModel::create($input);
         PaketModel::create($request->all());
         // Alert::success('Success', 'Berhasil menambahkan data Barang!');
         return redirect()->route('pakett.index');

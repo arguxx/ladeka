@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('container')
-<div class="card mx-auto mt-5 p-4 pt-3" style="width: 425px; border: 2.5px solid #333333;
+<div class="card mx-auto mt-5 mb-5 p-4 pt-3" style="width: 425px; border: 2.5px solid #333333;
 box-sizing: border-box;
 box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
-border-radius: 29px; height:554px;">
+border-radius: 29px;">
   <div class="card-body">
     <form class="my-auto">
       <div class="input-group mb-3">
@@ -18,6 +18,10 @@ border-radius: 29px; height:554px;">
             <option value="2">Paket 2</option>
             <option value="3">Paket 3</option>
         </select>
+      </div>
+      <div class="mb-3">
+        <label for="#" class="form-label fs-5"><strong>NAMA {{$member->namaLengkap}}</strong></label>
+        <input type="text" class="form w-100 p-0 pb-1 mb-3" id="#" style="border: 0; border-bottom: 1px solid black;" placeholder="{{ $member->namaLengkap }}">
       </div>
       <div class="mb-3">
         <label for="#" class="form-label fs-5"><strong>MERK MOBIL</strong></label>

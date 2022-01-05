@@ -18,7 +18,7 @@ class Member extends Migration
             $table->integer('kodeUnik');
             $table->string('namaLengkap');
             $table->string('tanggalLahir');
-            $table->string('noTelp');
+            $table->bigInteger('noTelp');
             $table->string('email');
             $table->timestamps();
         });

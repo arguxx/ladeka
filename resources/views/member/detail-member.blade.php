@@ -24,7 +24,7 @@ border-radius: 29px;">
         </tr>
     </table>
 </div>
-<a href="/input-transaksi" class="btn mx-auto mb-4" style="background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">Tambah Transaksi</a>
+<a href="{{ Route('transaksi.show', $member->id) }}" class="btn mx-auto mb-4" style="background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">Tambah Transaksi</a>
 <table class="table table-bordered border-dark text-center table-responsive-sm w-100">
     <thead>
       <tr style="background-color:#9B51E0; color:white;">

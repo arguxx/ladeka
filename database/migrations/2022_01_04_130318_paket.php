@@ -17,7 +17,9 @@ class Paket extends Migration
             $table->id();
             $table->string('namaPaket');
             $table->longText('deskripsi');
-            $table->integer('harga');
+            $table->longText('deskripsi1')->nullable();
+            $table->longText('deskripsi2')->nullable();
+            $table->bigInteger('harga');
             $table->timestamps();
         });
     }
