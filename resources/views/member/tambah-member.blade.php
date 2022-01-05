@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('container')
-<div class="card mx-auto mt-5 p-4 pt-3" style="width: 425px; border: 2.5px solid #333333; box-sizing: border-box; box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25); border-radius: 29px; height:554px;">
+<div class="card mx-auto mt-5 mb-5 p-4 pt-3" style="width: 425px; border: 2.5px solid #333333; box-sizing: border-box; box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25); border-radius: 29px;">
   <div class="card-body">
     <div class="container mx-auto">
       @if ($errors->any())

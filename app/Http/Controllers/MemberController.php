@@ -17,7 +17,7 @@ class MemberController extends Controller
     public function index()
     {
         // $member = MemberModel::all();
-        $member = DB::table('member')->paginate(8);
+        $member = DB::table('member')->orderByDesc('id')->paginate(8);
         // $member = MemberModel::all();
         return view('member.list-member', ['member' => $member]);
 
