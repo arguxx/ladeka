@@ -6,6 +6,9 @@ use App\Models\MemberModel;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\DB;
+use App\Models\PaketModel;
+use Illuminate\Support\Facades\Redis;
+use Symfony\Component\Console\Input\Input;
 
 class MemberController extends Controller
 {
@@ -68,9 +71,12 @@ class MemberController extends Controller
      * @param  \App\Models\MemberModel  $memberModel
      * @return \Illuminate\Http\Response
      */
-    public function show(MemberModel $member)
+    public function show(MemberModel $member, Request $request)
     {
-        return view('member.detail-member',compact('member'));
+        $compact = compact('member');
+        $pakett = PaketModel::all();
+        $results = DB::select('select * from transaksi where memberid = ?', [2000]);
+        return view('member.detail-member',$compact,['paket' => $pakett, 'trans' => $results]);
     }
 
     /**
@@ -158,5 +164,11 @@ class MemberController extends Controller
         // $member = MemberModel::all();
         return view('member.list-member', ['member' => $member]);
 
+    }
+    public function transaksi(MemberModel $member)
+    {
+        $pakett = PaketModel::all();
+        return view('member.input-transaksi', ['paket' => $pakett]);
+        
     }
 }

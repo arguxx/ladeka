@@ -44,15 +44,6 @@ class PaketController extends Controller
             'deskripsi2' => [],
         ]);
 
-        // $input = [
-        //     // 'kodeUnik' => $this->generateUniqueCode(),
-        //     'namaPaket' => $request->input('namaPaket'),
-        //     'harga' => $request->input('harga'),
-        //     'deskripsi' => $request->input('deskripsi'),
-        //     'deskripsi1' => $request,
-        //     'deskripsi2' => $request,
-        // ];
-
         // PaketModel::create($input);
         PaketModel::create($request->all());
         // Alert::success('Success', 'Berhasil menambahkan data Barang!');

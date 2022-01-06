@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class TransaksiModel extends Model
 {
     use HasFactory;
+    protected $table = 'transaksi';
+    protected $fillable = [
+    'memberId',
+    'tipePaket',
+    'merkMobil',
+    'harga',
+];
 }

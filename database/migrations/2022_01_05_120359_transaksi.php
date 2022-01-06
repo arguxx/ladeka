@@ -15,10 +15,9 @@ class Transaksi extends Migration
     {
         Schema::create('transaksi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('memberId')->constrained('member');
+            $table->integer('memberId');
             $table->string('tipePaket')->nullable();
             $table->longText('merkMobil')->nullable();
-            $table->longText('tipeMobil')->nullable();
             $table->bigInteger('harga')->nullable();
             $table->timestamps();
         });

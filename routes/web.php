@@ -32,7 +32,8 @@ Route::resource('nyari', NyariController::class);
 Route::resource('transaksi', TransaksiController::class);
 
 // Route::get('/user', [UserController::class, 'index']);
-
+// Route::get('/member/transaksi/{id}', [TransaksiController::class, 'transaksi']);
+Route::get('member/{id}', 'TransaksiController@store');
 
 
 Route::get('/dashboard', function () {

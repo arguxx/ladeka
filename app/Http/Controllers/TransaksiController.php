@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\TransaksiModel;
+use App\Http\Controllers\MemberController;
 use Illuminate\Http\Request;
 use App\Models\MemberModel;
+use App\Models\PaketModel;
 
 class TransaksiController extends Controller
 {
@@ -15,7 +17,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard');
     }
 
     /**
@@ -23,9 +25,9 @@ class TransaksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(MemberModel $member)
+    public function create()
     {
-        return view('member.input-transaksi', compact('member'));
+        
     }
 
     /**
@@ -36,9 +38,27 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'tipePaket' => ['required', 'string'],
+            'merkMobil' => ['required', 'string'],
+            'harga' => ['required', 'integer'],
+            
+        ]);
+        $input = [
+            'memberId' => $request->input('idmemb'),
+            'tipePaket' => $request->input('tipePaket'),
+            'merkMobil' => $request->input('merkMobil'),
+            'harga' => $request->input('harga'),
+        ];
+        // dd($input);
+        // $request->route('id');
+        // $input->save();
+        TransaksiModel::create($input);
+        // TransaksiModel::create($request->all());
+        // Alert::success('Success', 'Berhasil menambahkan data Barang!');
 
+        return redirect()->route('member.index');
+    }
     /**
      * Display the specified resource.
      *
@@ -82,5 +102,11 @@ class TransaksiController extends Controller
     public function destroy(TransaksiModel $transaksiModel)
     {
         //
+    }
+    public function urlmemb($request)
+    {
+
+    $memb = $request->url();
+    return $memb;
     }
 }
