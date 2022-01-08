@@ -65,7 +65,7 @@ border-radius: 29px;">
 <table class="table table-bordered border-dark text-center table-responsive-sm w-100">
     <thead>
       <tr style="background-color:#9B51E0; color:white;">
-        <th scope="col">No.</th>
+        <th scope="col">Tanggal Berlangganan.</th>
         <th scope="col">Paket</th>
         <th scope="col">Merk Mobil</th>
         <th scope="col">Harga</th>
@@ -75,11 +75,17 @@ border-radius: 29px;">
     <tbody style="background-color:white;">
       @foreach ($trans as $trans)   
       <tr>
-        <td>1</td>
+        <td>{{ $trans->created_at }}</td>
         <td>{{ $trans->tipePaket }}</td>
-        <td>Merk Mobil</td>
-        <td>IDR xxxxxxx</td>
-        <td><a href=""><i class="fas fa-trash-alt" style="color: purple;"></i></a></td>
+        <td>{{ $trans->merkMobil }}</td>
+        <td>IDR {{ $trans->harga }}</td>
+        <td>
+          <form style="display:inline;" method="POST" action="{{ url('transaksi', $trans->id ) }}">
+            @csrf
+            @method('DELETE')
+            <button onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i class="fas fa-trash-alt mx-3" style="color: purple;"></i><button>
+          </form>  
+        </td>
       </tr>
       @endforeach
     </tbody>

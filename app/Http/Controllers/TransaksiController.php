@@ -7,6 +7,7 @@ use App\Http\Controllers\MemberController;
 use Illuminate\Http\Request;
 use App\Models\MemberModel;
 use App\Models\PaketModel;
+use GuzzleHttp\Psr7\Uri;
 
 class TransaksiController extends Controller
 {
@@ -38,6 +39,7 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
+        
         $request->validate([
             'tipePaket' => ['required', 'string'],
             'merkMobil' => ['required', 'string'],
@@ -56,8 +58,10 @@ class TransaksiController extends Controller
         TransaksiModel::create($input);
         // TransaksiModel::create($request->all());
         // Alert::success('Success', 'Berhasil menambahkan data Barang!');
-
-        return redirect()->route('member.index');
+        $idd = $request->input('idmemb');
+        $uri = "member/{$idd}";
+        // dd($uri);
+        return redirect($uri);
     }
     /**
      * Display the specified resource.
@@ -99,14 +103,14 @@ class TransaksiController extends Controller
      * @param  \App\Models\TransaksiModel  $transaksiModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TransaksiModel $transaksiModel)
+    public function destroy(TransaksiModel $transaksi)
     {
-        //
-    }
-    public function urlmemb($request)
-    {
+        // $uri = $request->segments();
+        // dd($uri);
+        // $ind = $uri[1];
+        // $indd= "member/{$ind}";
+        $transaksi->delete();
+        return redirect()->route('member.index');
+        }
 
-    $memb = $request->url();
-    return $memb;
-    }
 }

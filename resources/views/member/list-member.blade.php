@@ -5,11 +5,10 @@
 <br>
 
 
-<form class="my-auto" action="{{ route('nyari.index') }}" method="POST">
-  @csrf
-  <input type="text" name="cari" placeholder="Find Member" value="{{ old('cari') }}">
-<button type="submit">find</button>
-  </form>
+<form class="my-auto" action="{{ route('member.index') }}" method="GET" role="search">
+  <input type="text" name="term" id="term" placeholder="Find Member"">
+  <button type="submit">find</button>
+</form>
 
 
 <table class="table table-bordered border-dark text-center table-responsive-sm w-100">
