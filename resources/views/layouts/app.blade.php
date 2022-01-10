@@ -31,23 +31,6 @@
             @include('partials.navbar')
         </div>
 
-        <div id='back' class="container mx-auto">
-            <button onclick="history.back()">
-                <i class="fas fa-arrow-circle-left fa-2x px-3" ></i>
-            </button>
-        </div>
-        <script>
-            function back() {
-            var x = document.getElementById("back");
-            if (window.location.href === "http://ladekaf.test/dashboard") {
-            x.style.display = "none";
-            } else {
-            x.style.display = "block";
-            }
-        }
-        back()
-        </script>
-
         <div class="container mx-auto">
             @yield('container')
         </div>

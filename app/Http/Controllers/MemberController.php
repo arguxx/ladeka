@@ -103,7 +103,7 @@ class MemberController extends Controller
      */
     public function edit(MemberModel $member)
     {
-        // return view('member.edit',compact('member'));
+        return view('member.edit-member',compact('member'));
     }
 
     /**
@@ -115,18 +115,18 @@ class MemberController extends Controller
      */
     public function update(Request $request, MemberModel $member)
     {
-        // $request->validate([
-        //     'namaLengkap' => ['required', 'string'],
-        //     'tanggalLahir' => ['required', 'string'],
-        //     'noTelp' => ['required', 'integer'],
-        //     'email' =>['required', 'integer'],
-        // ]);
-
-        // $memberModel->update($request->all());
+        $request->validate([
+            'namaLengkap' => [ 'string'],
+            'tanggalLahir' => [ 'string'],
+            'noTelp' => [ 'integer'],
+            'email' =>[ 'string'],
+        ]);
+        // dd($request);
+        $member->update($request->all());
         Alert::success('Success', 'Berhasil mengedit data Barang!');
 
 
-        // return redirect()->route('member.index');
+        return redirect()->route('member.index');
     }
 
     /**
@@ -137,7 +137,6 @@ class MemberController extends Controller
      */
     public function destroy(MemberModel $member)
     {
-        dd($member);
         $member->delete();
 
         Alert::success('Success', 'Berhasil menghapus data Member!');

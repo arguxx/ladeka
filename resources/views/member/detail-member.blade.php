@@ -7,6 +7,22 @@
         }
     </style>
 {{-- <input hidden value="{{ $member->id }}" name="idmemb" id="idmemb"/> --}}
+<div id='back' class="container mx-auto">
+  <button onclick="history.back()">
+      <i class="fas fa-arrow-circle-left fa-2x px-3" ></i>
+  </button>
+</div>
+<script>
+  function back() {
+  var x = document.getElementById("back");
+  if (window.location.href === "ladekaf.test/dashboard") {
+  x.style.display = "none";
+  } else {
+  x.style.display = "block";
+  }
+}
+back()
+</script>
 
 <div class="row d-flex justify-content-between py-5">
 <div class="card p-4 pt-3" style="width: 60%; border: 2.5px solid #333333;

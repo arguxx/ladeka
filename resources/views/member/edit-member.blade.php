@@ -2,6 +2,8 @@
 
 @section('container')
 
+
+
 <div id='back' class="container mx-auto">
   <button onclick="history.back()">
       <i class="fas fa-arrow-circle-left fa-2x px-3" ></i>
@@ -33,25 +35,27 @@ back()
               </ul>
             </div>
       @endif
-
-      <form class="my-auto" action="{{ route('member.store') }}" method="POST">
+      <div class="text-center mb- mx-auto">
+        <p for="nama" class="inline-block mr-6 text-center font-bold text-gray-600">Last Update: {{$member->updated_at}}</p>
+    </div><br>
+      <form class="my-auto" action="{{ route('member.update', $member->id) }}" method="POST">
       @csrf
       @method('PUT')
         <div class="mb-3">
         <label class="form-label fs-5" for="namaLengkap" ><strong>NAMA LENGKAP</strong></label>
-          <input id="namaLengkap" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaLengkap" value="{{ $member->namaLengkap }}" placeholder="Masukkan Nama Lengkap" required />
+          <input id="namaLengkap" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaLengkap" :value="old('namaLengkap')" placeholder="{{ $member->namaLengkap }}" />
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="tanggalLahir" ><strong>TANGGAL LAHIR</strong></label>
-          <input id="tanggalLahir" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="date" name="tanggalLahir" value="{{ $member->tanggalLahir }}" placeholder="Masukkan Tanggal Lahir" required />
+          <input id="tanggalLahir" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="date" name="tanggalLahir" :value="old('tanggalLahir')" placeholder="{{ $member->tanggalLahir }}" />
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="noTelp" ><strong>NO. TELEPON</strong></label>
-          <input id="noTelp" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="tel" name="noTelp" value="{{ $member->noTelp }}" placeholder="Masukkan Nomer Telepon" required />
+          <input id="noTelp" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="tel" name="noTelp" :value="old('noTelp')" placeholder="{{ $member->noTelp }}" />
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="email" ><strong>E-MAIL</strong></label>
-          <input id="email" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="email" value="{{ $member->email }}" placeholder="Masukkan E-Mail" required />
+          <input id="email" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="email" :value="old('email')" placeholder="{{ $member->email }}" />
         </div>
         <button class="btn mt-4 mx-auto" style="display: block; background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">{{ __('Save') }}</button>
       </form>

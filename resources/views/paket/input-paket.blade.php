@@ -1,6 +1,24 @@
 @extends('layouts.app')
 
 @section('container')
+
+<div id='back' class="container mx-auto">
+  <button onclick="history.back()">
+      <i class="fas fa-arrow-circle-left fa-2x px-3" ></i>
+  </button>
+</div>
+<script>
+  function back() {
+  var x = document.getElementById("back");
+  if (window.location.href === "ladekaf.test/dashboard") {
+  x.style.display = "none";
+  } else {
+  x.style.display = "block";
+  }
+}
+back()
+</script>
+
 <div class="card mx-auto mt-5 mb-5 p-4 pt-5" style="width: 425px; border: 2.5px solid #333333;
 box-sizing: border-box;
 box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.25);
