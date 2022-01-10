@@ -118,6 +118,13 @@
   <button onclick="history.back()">
       <i class="fas fa-arrow-circle-left fa-2x px-3" ></i>
   </button>
+  <div class="search mb-3" style="float: right;">
+    <div class="icon"></div>
+      <form action="{{ route('member.index') }}" method="GET" role="search" class="input">
+        <input style="width: 360px" type="text" name="term" id="term">
+        <span class="clear" onclick="document.getElementById('term').value = ''"></span>
+      </form>
+  </div>
 </div>
 <script>
   function back() {
@@ -129,8 +136,9 @@
   }
 }
 back()
+
 </script>
-<br>
+
 
 {{-- <div class="search mb-3">
   <div class="icon"></div>
@@ -140,13 +148,15 @@ back()
   </form>
 </div> --}}
 
-<div class="search mb-3">
+{{-- <div class="search mb-3">
   <div class="icon"></div>
     <form action="{{ route('member.index') }}" method="GET" role="search" class="input">
       <input style="width: 360px" type="text" name="term" id="term">
       <span class="clear" onclick="document.getElementById('term').value = ''"></span>
     </form>
-</div>
+</div> --}}
+
+
 
 <table class="table table-bordered border-dark text-center table-responsive-sm w-100">
     <thead>

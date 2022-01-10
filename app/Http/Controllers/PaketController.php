@@ -67,9 +67,10 @@ class PaketController extends Controller
      * @param  \App\Models\PaketModel  $paketModel
      * @return \Illuminate\Http\Response
      */
-    public function edit(PaketModel $paketModel)
+    public function edit(PaketModel $pakett)
     {
-        //
+        return view('paket.edit-paket',compact('pakett'));
+
     }
 
     /**
@@ -79,9 +80,19 @@ class PaketController extends Controller
      * @param  \App\Models\PaketModel  $paketModel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, PaketModel $paketModel)
+    public function update(Request $request, PaketModel $pakett)
     {
-        //
+            $request->validate([
+            'namaPaket' => [ 'string'],
+            'harga' => ['integer'],
+            'deskripsi' => [ 'string'],
+            'deskripsi1' => [],
+            'deskripsi2' => [],
+        ]);
+
+        $pakett->update($request->all());
+        // Alert::success('Success', 'Berhasil mengedit data Barang!');
+        return redirect()->route('pakett.index');
     }
 
     /**
@@ -90,8 +101,14 @@ class PaketController extends Controller
      * @param  \App\Models\PaketModel  $paketModel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PaketModel $paketModel)
+    public function destroy(PaketModel $pakett)
     {
-        //
+        {
+            $pakett->delete();
+    
+            // Alert::success('Success', 'Berhasil menghapus data Member!');
+    
+            return redirect()->route('dashboard');
+        }
     }
 }

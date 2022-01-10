@@ -2,10 +2,20 @@
 
 @section('container')
 <style>
-        *{
-            /* border: 1px solid blue; */
-        }
-    </style>
+  #btn_tambah {
+    display: block; 
+    background-color: #9B51E0; 
+    border: 2px solid #9B51E0; 
+    border-radius: 10px; 
+    color: white; 
+    padding: 15px 45px;
+  }
+
+  #btn_tambah:hover {
+    color: #9B51E0;
+    background-color: transparent;
+  }
+  </style>
 {{-- <input hidden value="{{ $member->id }}" name="idmemb" id="idmemb"/> --}}
 <div id='back' class="container mx-auto">
   <button onclick="history.back()">
@@ -73,7 +83,7 @@ border-radius: 29px;">
         <input id="harga" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="harga" :value="old('harga')" placeholder="Masukan Harga Mobil" required />
       </div>
       <input hidden value="{{ $member->id }}" name="idmemb" id="idmemb"/>
-      <button class="btn mt-4 mx-auto" style="display: block; background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">{{ __('Save') }}</button>
+      <button id="btn_tambah" type="submit" class="btn mt-5 mx-auto" style="">Tambah</button>
     </form>
   </div>
 </div>

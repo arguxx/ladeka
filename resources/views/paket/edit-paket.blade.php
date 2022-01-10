@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('container')
-
 <style>
   #btn_tambah {
     display: block; 
@@ -52,8 +51,9 @@ border-radius: 29px;">
   @endif
 
   <div class="card-body">
-    <form class="my-auto" action="{{ route('pakett.store') }}" method="POST">
-      @csrf
+    <form class="my-auto" action="{{ route('pakett.update', $pakett->id) }}" method="POST">
+        @csrf
+        @method('PUT')
       <div class="mb-3">
         <label class="form-label fs-5" for="namaPaket" ><strong>NAMA PAKET</strong></label>
           <input id="namaPaket" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaPaket" :value="old('namaPaket')" placeholder="Masukkan Nama Paket" required />
@@ -76,7 +76,7 @@ border-radius: 29px;">
         </div>
 
         <button id="btn_tambah" type="submit" class="btn mt-5 mx-auto" style="">Tambah</button>
-    </form>
+      </form>
   </div>
 </div>
 @endsection

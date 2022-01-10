@@ -2,7 +2,21 @@
 
 @section('container')
 
+<style>
+  #btn_tambah {
+    display: block; 
+    background-color: #9B51E0; 
+    border: 2px solid #9B51E0; 
+    border-radius: 10px; 
+    color: white; 
+    padding: 15px 45px;
+  }
 
+  #btn_tambah:hover {
+    color: #9B51E0;
+    background-color: transparent;
+  }
+</style>
 
 <div id='back' class="container mx-auto">
   <button onclick="history.back()">
@@ -50,14 +64,17 @@ back()
           <input id="tanggalLahir" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="date" name="tanggalLahir" :value="old('tanggalLahir')" placeholder="{{ $member->tanggalLahir }}" />
         </div>
         <div class="mb-3">
-          <label class="form-label fs-5" for="noTelp" ><strong>NO. TELEPON</strong></label>
-          <input id="noTelp" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="tel" name="noTelp" :value="old('noTelp')" placeholder="{{ $member->noTelp }}" />
+          <label class="form-label fs-5" for="noTelp"><strong>NO. TELEPON</strong></label>
+          <div class="d-flex">
+            <div class="nol mr-3 mb-3 px-2 py-1 fw-bold">+62</div>
+            <input id="noTelp" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="tel" name="noTelp" :value="old('noTelp')" placeholder="{{ $member->noTelp }}" required />
+          </div>
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="email" ><strong>E-MAIL</strong></label>
           <input id="email" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="email" :value="old('email')" placeholder="{{ $member->email }}" />
         </div>
-        <button class="btn mt-4 mx-auto" style="display: block; background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">{{ __('Save') }}</button>
+        <button id="btn_tambah" type="submit" class="btn mt-5 mx-auto" style="">Tambah</button>
       </form>
     </div>
   </div>  

@@ -1,3 +1,19 @@
+<style>
+    *{
+        /* border: 1px solid blue; */
+    }
+
+    a:hover {
+        /* .menu {
+            color: white;
+        } */
+        color: black;
+        opacity: 0.6;
+        /* width: 200px; */
+        transition-duration: 0.2s;
+    }
+</style>
+
 <nav class="navbar mt-4 mx-5">
     <div class="navbar-brand">
         <a href="{{ route('dashboard') }}">

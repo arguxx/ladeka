@@ -1,7 +1,21 @@
 @extends('layouts.app')
 
 @section('container')
+<style>
+  #btn_tambah {
+    display: block; 
+    background-color: #9B51E0; 
+    border: 2px solid #9B51E0; 
+    border-radius: 10px; 
+    color: white; 
+    padding: 15px 45px;
+  }
 
+  #btn_tambah:hover {
+    color: #9B51E0;
+    background-color: transparent;
+  }
+</style>
 <div id='back' class="container mx-auto">
   <button onclick="history.back()">
       <i class="fas fa-arrow-circle-left fa-2x px-3" ></i>
@@ -36,24 +50,26 @@ back()
 
       <form class="my-auto" action="{{ route('member.store') }}" method="POST">
       @csrf
-      @method('PUT')
         <div class="mb-3">
         <label class="form-label fs-5" for="namaLengkap" ><strong>NAMA LENGKAP</strong></label>
-          <input id="namaLengkap" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaLengkap" value="{{ $member->namaLengkap }}" placeholder="Masukkan Nama Lengkap" required />
+          <input id="namaLengkap" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaLengkap":value="old('namaLengkap')" placeholder="Masukkan Nama Lengkap" required />
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="tanggalLahir" ><strong>TANGGAL LAHIR</strong></label>
-          <input id="tanggalLahir" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="date" name="tanggalLahir" value="{{ $member->tanggalLahir }}" placeholder="Masukkan Tanggal Lahir" required />
+          <input id="tanggalLahir" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="date" name="tanggalLahir" :value="old('tanggalLahir')" placeholder="Masukkan Tanggal Lahir" required />
         </div>
         <div class="mb-3">
-          <label class="form-label fs-5" for="noTelp" ><strong>NO. TELEPON</strong></label>
-          <input id="noTelp" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="tel" name="noTelp" value="{{ $member->noTelp }}" placeholder="Masukkan Nomer Telepon" required />
+          <label class="form-label fs-5" for="noTelp"><strong>NO. TELEPON</strong></label>
+          <div class="d-flex">
+            <div class="nol mr-3 mb-3 px-2 py-1 fw-bold">+62</div>
+            <input id="noTelp" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="tel" name="noTelp" :value="old('noTelp')" placeholder="Masukkan Nomer Telepon" required />
+          </div>
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="email" ><strong>E-MAIL</strong></label>
-          <input id="email" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="email" value="{{ $member->email }}" placeholder="Masukkan E-Mail" required />
+          <input id="email" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="email" :value="old('email')" placeholder="Masukkan E-Mail" required />
         </div>
-        <button class="btn mt-4 mx-auto" style="display: block; background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">{{ __('Save') }}</button>
+        <button id="btn_tambah" type="submit" class="btn mt-5 mx-auto" style="">Tambah</button>
       </form>
     </div>
   </div>  
