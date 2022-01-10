@@ -15,7 +15,22 @@
       background-color: transparent;
     }
     </style>
-
+<div id='back' class="container mx-auto">
+    <button onclick="history.back()">
+        <i class="fas fa-arrow-circle-left fa-2x px-3" ></i>
+    </button>
+  </div>
+  <script>
+    function back() {
+    var x = document.getElementById("back");
+    if (window.location.href === "ladekaf.test/dashboard") {
+    x.style.display = "none";
+    } else {
+    x.style.display = "block";
+    }
+  }
+  back()
+  </script>
     <div class="containner mt-4 mb-5 mx-5">
         <h1 class="text-center fs-2 mb-4 fw-bold">Paket Cuci Mobil Berlangganan</h1>
         <a href="{{ route('pakett.create') }}" id="btn_tambah" class="btn mx-auto mb-4" style="background-color: #9B51E0; border-radius: 10px; color: white; padding: 10px 20px;">Tambah Paket</a>

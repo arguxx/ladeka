@@ -108,7 +108,7 @@ class PaketController extends Controller
     
             // Alert::success('Success', 'Berhasil menghapus data Member!');
     
-            return redirect()->route('dashboard');
+            return redirect()->route('pakett.index');
         }
     }
 }

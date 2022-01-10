@@ -46,11 +46,6 @@
                             required autocomplete="current-password">
                         </div>
                 {{-- <a href="#" style="color: black"><i>Forgot Password</i></a> --}}
-                @if (Route::has('password.request'))
-                    <a class="underline italic" style="color: black" href="{{ route('password.request') }}">
-                        {{ __('Forgot password?') }}
-                    </a>
-                @endif
                 <br>
                 <button type="submit" class="btn mt-4" style="background-color: #9B51E0; border-radius: 10px; color: white; padding: 15px 45px;">Login</button>
                 </form>
