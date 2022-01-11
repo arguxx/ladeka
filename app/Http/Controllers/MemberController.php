@@ -88,10 +88,14 @@ class MemberController extends Controller
     {
         $uri = $request->segments();
         $ind = $uri[1];
-        // dd($ind);
         $compact = compact('member');
         $pakett = PaketModel::all();
-        $results = DB::select('select * from transaksi where memberid = ?', [$ind]);
+        // $results = DB::select('select * from transaksi where memberid = ?', [$ind]);
+
+        $results = DB::table('transaksi')
+        ->where('memberid', '=', [$ind])
+        ->get();
+
         return view('member.detail-member',$compact,['paket' => $pakett, 'trans' => $results]);
     }
 
