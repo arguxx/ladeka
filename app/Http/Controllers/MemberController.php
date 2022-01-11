@@ -87,15 +87,15 @@ class MemberController extends Controller
     public function show(MemberModel $member, Request $request)
     {
         $uri = $request->segments();
-        $ind = $uri[0];
+        $ind = $uri[1];
         $compact = compact('member');
         $pakett = PaketModel::all();
         // $results = DB::select('select * from transaksi where memberid = ?', [$ind]);
 
         $results = DB::table('transaksi')
-        ->where('memberid', '=', [$ind])
+        ->where('memberId', '=', [$ind])
         ->get();
-        dd($results);
+
 
         return view('member.detail-member',$compact,['paket' => $pakett, 'trans' => $results]);
     }
