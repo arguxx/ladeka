@@ -16,7 +16,6 @@
     background-color: transparent;
   }
   </style>
-{{-- <input hidden value="{{ $member->id }}" name="idmemb" id="idmemb"/> --}}
 <div id='back' class="container mx-auto">
   <button onclick="history.back()">
       <i class="fas fa-arrow-circle-left fa-2x px-3" ></i>
@@ -50,7 +49,7 @@ border-radius: 29px;">
         </tr>
         <tr>
             <td class="px-2 py-4 fs-5 fw-bold">No. Telepon</td>
-            <td class="px-2 py-4 fs-5 fw-bold">: {{$member->noTelp}}</td>
+            <td class="px-2 py-4 fs-5 fw-bold">: +62{{$member->noTelp}}</td>
         </tr>
         <tr>
             <td class="px-2 py-4 fs-5 fw-bold">E-mail</td>
@@ -69,18 +68,16 @@ border-radius: 29px;">
       <div class="input-group mb-3">
         <label for="tipePaket" class="form-label fs-5"><strong>PAKET</strong></label>
       <select class="custom-select w-100 p-0 pb-1 mb-3" name="tipePaket" id="tipePaket" style="border: 0; border-bottom: 1px solid black;">
+
           @foreach ($paket as $paket)
-          <option value="{{ $paket->namaPaket }}">{{ $paket->namaPaket }}</option>
+            <option value="{{ $paket->namaPaket }}">{{ $paket->namaPaket }} (IDR. {{ $paket->harga }})</option>
           @endforeach
+
       </select>
       </div>
       <div class="mb-3">
         <label for="merkMobil" class="form-label fs-5"><strong>MERK MOBIL</strong></label>
         <input id="merkMobil" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="merkMobil" :value="old('merkMobil')" placeholder="Masukkan Merk Mobil" required />
-      </div>
-      <div class="mb-3">
-        <label for="harga" class="form-label fs-5"><strong>HARGA</strong></label>
-        <input id="harga" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="harga" :value="old('harga')" placeholder="Masukan Harga Mobil" required />
       </div>
       <input hidden value="{{ $member->id }}" name="idmemb" id="idmemb"/>
       <button id="btn_tambah" type="submit" class="btn mt-5 mx-auto" style="">Tambah</button>
@@ -91,7 +88,7 @@ border-radius: 29px;">
 <table class="table table-bordered border-dark text-center table-responsive-sm w-100">
     <thead>
       <tr style="background-color:#9B51E0; color:white;">
-        <th scope="col">Tanggal Berlangganan.</th>
+        <th scope="col">Tanggal Pembelian</th>
         <th scope="col">Paket</th>
         <th scope="col">Merk Mobil</th>
         <th scope="col">Harga</th>

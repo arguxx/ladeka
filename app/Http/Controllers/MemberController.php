@@ -19,11 +19,6 @@ class MemberController extends Controller
      */
     public function index(Request $request)
     {
-        
-        // // $member = MemberModel::all();
-        // $member = DB::table('member')->orderByDesc('id')->paginate(8);
-        // // $member = MemberModel::all();
-        // return view('member.list-member', ['member' => $member]);
         $member = MemberModel::where([
             ['namaLengkap', '!=', Null],
             [function ($query) use ($request) {
@@ -37,7 +32,6 @@ class MemberController extends Controller
             // projects = Project: :latest ()-›paginate(5);
             return view( 'member.list-member', compact('member'))
                 ->with('i', (request ()->input ('page', 1) - 1) * 5);
-
     }
 
     /**
@@ -90,12 +84,10 @@ class MemberController extends Controller
         $ind = $uri[1];
         $compact = compact('member');
         $pakett = PaketModel::all();
-        // $results = DB::select('select * from transaksi where memberid = ?', [$ind]);
 
         $results = DB::table('transaksi')
         ->where('memberId', '=', [$ind])
         ->get();
-
 
         return view('member.detail-member',$compact,['paket' => $pakett, 'trans' => $results]);
     }

@@ -57,22 +57,22 @@ back()
       @method('PUT')
         <div class="mb-3">
         <label class="form-label fs-5" for="namaLengkap" ><strong>NAMA LENGKAP</strong></label>
-          <input id="namaLengkap" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaLengkap" :value="old('namaLengkap')" placeholder="{{ $member->namaLengkap }}" />
+          <input id="namaLengkap" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaLengkap" :value="old('namaLengkap')" value="{{ $member->namaLengkap }}" />
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="tanggalLahir" ><strong>TANGGAL LAHIR</strong></label>
-          <input id="tanggalLahir" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="date" name="tanggalLahir" :value="old('tanggalLahir')" placeholder="{{ $member->tanggalLahir }}" />
+          <input id="tanggalLahir" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="date" name="tanggalLahir" :value="old('tanggalLahir')" value="{{ $member->tanggalLahir }}" />
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="noTelp"><strong>NO. TELEPON</strong></label>
           <div class="d-flex">
             <div class="nol mr-3 mb-3 px-2 py-1 fw-bold">+62</div>
-            <input id="noTelp" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="tel" name="noTelp" :value="old('noTelp')" placeholder="{{ $member->noTelp }}" required />
+            <input id="noTelp" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="tel" name="noTelp" :value="old('noTelp')" value="{{ $member->noTelp }}" required />
           </div>
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="email" ><strong>E-MAIL</strong></label>
-          <input id="email" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="email" :value="old('email')" placeholder="{{ $member->email }}" />
+          <input id="email" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="email" :value="old('email')" value="{{ $member->email }}" />
         </div>
         <button id="btn_tambah" type="submit" class="btn mt-5 mx-auto" style="">Tambah</button>
       </form>

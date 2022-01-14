@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\MemberModel;
 use App\Models\PaketModel;
 use GuzzleHttp\Psr7\Uri;
+use Illuminate\Support\Facades\DB;
 
 class TransaksiController extends Controller
 {
@@ -39,28 +40,30 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // $hargas = PaketModel::where('namaPaket', $this->paket)->first();
+
         $request->validate([
             'tipePaket' => ['required', 'string'],
             'merkMobil' => ['required', 'string'],
-            'harga' => ['required', 'integer'],
-            
+            // 'harga' => ['required', 'integer'],
         ]);
+        $ambil = $request->input('tipePaket');
+        $results = DB::table('paket')
+        ->where('namaPaket', '=', [$ambil])
+        ->first('harga');
+        $arr = json_decode(json_encode($results), true);
+
         $input = [
             'memberId' => $request->input('idmemb'),
             'tipePaket' => $request->input('tipePaket'),
             'merkMobil' => $request->input('merkMobil'),
-            'harga' => $request->input('harga'),
+            'harga' => $arr['harga'],
         ];
-        // dd($input);
-        // $request->route('id');
-        // $input->save();
         TransaksiModel::create($input);
-        // TransaksiModel::create($request->all());
-        // Alert::success('Success', 'Berhasil menambahkan data Barang!');
+
         $idd = $request->input('idmemb');
         $uri = "member/{$idd}";
-        // dd($uri);
+
         return redirect($uri);
     }
     /**

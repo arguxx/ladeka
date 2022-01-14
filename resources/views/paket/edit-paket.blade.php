@@ -56,23 +56,23 @@ border-radius: 29px;">
         @method('PUT')
       <div class="mb-3">
         <label class="form-label fs-5" for="namaPaket" ><strong>NAMA PAKET</strong></label>
-          <input id="namaPaket" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaPaket" :value="old('namaPaket')" placeholder="Masukkan Nama Paket" required />
+          <input id="namaPaket" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="namaPaket" :value="old('namaPaket')" value="{{ $pakett->namaPaket }}" required />
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="harga" ><strong>HARGA</strong></label>
-          <input id="harga" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="harga" :value="old('harga')" placeholder="Masukkan Harga Paket" required />
+          <input id="harga" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="text" name="harga" :value="old('harga')" value="{{ $pakett->harga }}" required />
         </div>
         <div class="mb-3">
           <label class="form-label fs-5" for="deskripsi" ><strong>DESKRIPSI 1</strong></label>
-          <input id="deskripsi" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="textarea" name="deskripsi" :value="old('deskripsi')" placeholder="Masukkan Deskripsi" required />
+          <input id="deskripsi" class="form w-100 p-0 pb-1 mb-3" style="border: 0; border-bottom: 1px solid black;" type="textarea" name="deskripsi" :value="old('deskripsi')" value="{{ $pakett->deskripsi }}" required />
         </div>
         <div class="mb-3">
           <label for="deskripsi1" class="form-label fs-5"><strong>DESKRIPSI 2 (optional)</strong></label>
-          <input type="text" class="form w-100 p-0 pb-1 mb-3" id="deskripsi1" style="border: 0; border-bottom: 1px solid black;" name="deskripsi1" :value="old('deskripsi1')" placeholder="Masukkan Deskripsi 2">
+          <input type="text" class="form w-100 p-0 pb-1 mb-3" id="deskripsi1" style="border: 0; border-bottom: 1px solid black;" name="deskripsi1" :value="old('deskripsi1')" value="{{ $pakett->deskripsi1 }}">
         </div>
         <div class="mb-3">
           <label for="deskripsi2" class="form-label fs-5"><strong>DESKRIPSI 3 (optional)</strong></label>
-          <input type="text" class="form w-100 p-0 pb-1 mb-3" id="deskripsi2" style="border: 0; border-bottom: 1px solid black;" name="deskripsi2" :value="old('deskripsi2')" placeholder="Masukkan Deskripsi 3">
+          <input type="text" class="form w-100 p-0 pb-1 mb-3" id="deskripsi2" style="border: 0; border-bottom: 1px solid black;" name="deskripsi2" :value="old('deskripsi2')" value="{{ $pakett->deskripsi2 }}">
         </div>
 
         <button id="btn_tambah" type="submit" class="btn mt-5 mx-auto" style="">Tambah</button>

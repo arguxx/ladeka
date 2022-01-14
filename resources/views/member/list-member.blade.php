@@ -176,10 +176,10 @@ back()
         <th>{{$members->kodeUnik}}</th>
         <td>{{$members->namaLengkap}}</td>
         <td>{{$members->tanggalLahir}}</td>
-        <td>{{$members->noTelp}}</td>
+        <td>+62{{$members->noTelp}}</td>
         <td>{{$members->email}}</td>
         <td class="d-flex justify-content-evenly">
-            <a href="{{ route('member.show' , $members->id) }}"><i class="fas fa-eye mx-3" style="color: purple;"></i></a>
+            <a href="{{ route('member.show', $members->id) }}"><i class="fas fa-eye mx-3" style="color: purple;"></i></a>
             <a href="{{ route('member.edit' , $members->id) }}"><i class="fas fa-pen mx-3" style="color: purple;"></i></a>
             {{-- <form action="">
               <button onclick="return confirm('Apakah data yang akan Anda edit sudah benar?')"><i class="fas fa-pen mx-3" style="color: purple;"></i><button>
